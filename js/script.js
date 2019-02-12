@@ -3,31 +3,16 @@ jQuery(function($) {
 
 //Mobile menu
 $('.menu__btn').click(function() {
-  $('.menu').toggleClass('menu--opened');
-  $('.menu__list').slideToggle();
-})
-
-//if (window.innerWidth < 766) {
-//  $('.menu__link').click(function() {
-//    $('.menu__list').slideToggle();
-//    $('.menu').removeClass('menu--opened');
-//  })
-//}
-
-//Scroll to top
-//$(window).scroll(function(){
-//  if ((window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop) >= 100) {
-//    $(".top").fadeIn();
-//  } else {
-//    $(".top").fadeOut();
-//  };
-//});
-//
-//$(".top").click(function () {
-//  $("body,html").animate({
-//    scrollTop: 0
-//  }, 400);
-//  return false;
-//});
+  $('.menu__wrap').addClass('menu__wrap--opened');
+});
+  
+$('.menu__close').click(function() {
+  $('.menu__wrap').removeClass('menu__wrap--opened');
+});
+  
+$('.menu__link--more').click(function(evt) {
+  evt.preventDefault();
+  $(this).next().slideToggle();
+});
 
 });
