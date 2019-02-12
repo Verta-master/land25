@@ -445,6 +445,7 @@ button {
 }
 .top {
   position: fixed;
+  z-index: 10;
   bottom: 300px;
   right: 30px;
   height: 65px;
@@ -457,9 +458,10 @@ button {
   background-size: 40px 40px;
 }
 .top p {
+  opacity: 0;
   margin: 0;
   position: absolute;
-  right: 100%;
+  right: 0;
   top: 0;
   bottom: 0;
   width: 220px;
@@ -469,10 +471,18 @@ button {
   text-align: right;
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid #fff;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .top p span {
   display: block;
   text-transform: uppercase;
+}
+.top:hover p {
+  opacity: 1;
+  right: 100%;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .wrapper {
   width: 1240px;
@@ -995,4 +1005,174 @@ button {
   line-height: 1.4 !important;
   font-weight: 500;
   text-transform: uppercase;
+}
+.modal {
+  width: 686px;
+  max-width: 100%;
+  padding: 60px 90px;
+  padding-bottom: 90px;
+  -webkit-box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 16px;
+}
+.modal--order {
+  width: 993px;
+}
+.modal__title {
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.modal__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: "Euclid Flex", "Arial", sans-serif;
+}
+.modal__field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+}
+.modal__label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.modal__input {
+  display: block;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid #dadada;
+  outline: none;
+}
+.checkbox {
+  display: none;
+}
+.checkbox__label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+}
+.checkbox__label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3c3c3b;
+}
+.checkbox__label::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 15px;
+  height: 7px;
+  border-bottom: 1px solid #3c3c3b;
+  border-left: 1px solid #3c3c3b;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.checkbox__label a {
+  border-bottom: 1px dashed #3c3c3b;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.checkbox__label a:hover,
+.checkbox__label a:active {
+  border-bottom-color: rgba(255, 255, 255, 0);
+  opacity: 0.8;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.checkbox:checked + .checkbox__label::after {
+  display: block;
+}
+.modal__btn {
+  width: 220px;
+  height: 50px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Euclid Flex", "Arial", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #dadada;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.modal__btn:hover,
+.modal__btn:active {
+  background-color: #6b6b6b;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.modal__message {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 140px;
+  min-height: 140px;
+  padding: 0 15px;
+  border: 1px solid #dadada;
+  outline: none;
+}
+.modal__column {
+  width: 48%;
+}
+.modal__column--text {
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+.modal__column--text .modal__message {
+  height: 86%;
+  max-height: 86%;
+}
+.modal__subtitle {
+  font-size: 19px;
+}
+.modal__info {
+  margin-bottom: 20px;
+  padding-left: 90px;
+  font-size: 16px;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 60px 60px;
+}
+.modal__info--1 {
+  background-image: url(../img/icons/home.svg);
+}
+.modal__info--2 {
+  background-image: url(../img/icons/ruler.svg);
+}
+.modal__comment {
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: left;
 }
