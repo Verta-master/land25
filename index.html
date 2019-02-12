@@ -6,6 +6,7 @@
   <meta  name="viewport" content="width=device-width,initial-scale=1">
   <title>Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
         </ul>
         <div class="header__phone">
           <a href="tel:+78005059972">8 (800) 505-99-72</a>
-          <a href="#" class="header__call">Заказать звонок</a>
+          <a data-fancybox data-src="#call" href="javascript:;" class="header__call">Заказать звонок</a>
         </div>
       </nav>
       <nav class="menu">
@@ -381,8 +382,8 @@
             </li>
           </ul>
           <p class="footer__title">СВЯЗАТЬСЯ С НАМИ</p>
-          <a href="#">Обратная связь</a>
-          <a href="#">Заказать обратный звонок</a>
+          <a data-fancybox data-src="#feedback" href="javascript:;">Обратная связь</a>
+          <a data-fancybox data-src="#call" href="javascript:;">Заказать обратный звонок</a>
           <a href="tel:+78005059913">8 (800) 505-99-13</a>
           <a href="mailto:8800@volhovez.natm.ru">8800@volhovez.natm.ru</a>
         </div>
@@ -396,10 +397,125 @@
       </div>
     </div>
   </footer>
-  <a href="#top" class="top"><p><span>Вызвать</span>специалиста на дом</p></a>
+  
+  <a data-fancybox data-src="#order" href="javascript:;" class="top"><p><span>Вызвать</span>специалиста на дом</p></a>
+  
+  <!-- Modal windows -->
+  <div style="display: none;" id="call" class="modal">
+    <p class="modal__title">ЗАКАЗАТЬ ЗВОНОК</p>
+    <p>* - поля, обязательные для заполнения</p>
+    <form action="#" class="modal__form">
+      <div class="modal__wrap">
+        <div class="modal__column">
+          <fieldset class="modal__field">
+            <label for="name" class="modal__label">Имя *:</label>
+            <input type="text" id="name" class="modal__input" required>
+          </fieldset>
+        </div>
+        <div class="modal__column">
+          <fieldset class="modal__field">
+            <label for="tel" class="modal__label">Телефон *:</label>
+            <input type="tel" id="tel" class="modal__input" required>
+          </fieldset>
+        </div>
+      </div>
+      <input type="checkbox" id="check" class="checkbox">
+      <label for="check" class="checkbox__label">Принимаю <a href="#">условия обработки</a> моих персональных данных</label>
+      <button type="submit" class="modal__btn">Отправить</button>
+    </form>
+  </div>
+  
+  <div style="display: none;" id="feedback" class="modal">
+    <p class="modal__title">ПОДДЕРЖКА КЛИЕНТОВ</p>
+    <form action="#" class="modal__form">
+      <div class="modal__wrap">
+        <div class="modal__column">
+          <fieldset class="modal__field">
+            <label for="topic" class="modal__label">Тема:</label>
+            <select id="topic" class="modal__input">
+              <option value="1" selected>Консультация по продукту</option>
+              <option value="2">Заказ замера/расчета</option>
+              <option value="3">Претензия по продукту/салону</option>
+              <option value="4">Дата готовности заказа</option>
+              <option value="5">Сотрудничество</option>
+              <option value="6">Прочее</option>
+            </select>
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="name2" class="modal__label">ФИО *:</label>
+            <input type="text" id="name2" class="modal__input" required>
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="email" class="modal__label">Почта *:</label>
+            <input type="email" id="email" class="modal__input" required>
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="tel2" class="modal__label">Контактный номер телефона *:</label>
+            <input type="tel" id="tel2" class="modal__input" required>
+          </fieldset>
+        </div>
+        <div class="modal__column modal__column--text">
+          <label for="message" class="modal__label">Комментарии:</label>
+          <textarea id="message" class="modal__message"></textarea>
+        </div>
+      </div>
+      <input type="checkbox" id="check2" class="checkbox">
+      <label for="check2" class="checkbox__label">Принимаю <a href="#">условия обработки</a> моих персональных данных</label>
+      <p>* - поля, обязательные для заполнения</p>
+      <button type="submit" class="modal__btn">Отправить</button>
+    </form>
+  </div>
+  
+  <div style="display: none;" id="order" class="modal modal--order">
+    <p class="modal__title">ПРИГЛАСИТЬ МЕНЕДЖЕРА НА ДОМ</p>
+    <p class="modal__subtitle">Уважаемые покупатели, вы можете оформить заказ, не выходя из дома!</p>
+    <form action="#" class="modal__form">
+      <div class="modal__wrap">
+        <div class="modal__column">
+          <div class="modal__info modal__info--1">
+            Для вас доступна консультация с выездом наших специалистов по вашему адресу
+          </div>
+          <fieldset class="modal__field">
+            <label for="name3" class="modal__label">Ваше имя *:</label>
+            <input type="text" id="name3" class="modal__input" required>
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="tel3" class="modal__label">Контактный номер телефона *:</label>
+            <input type="tel" id="tel3" class="modal__input" required>
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="city" class="modal__label">Город *:</label>
+            <input type="text" id="city" class="modal__input" required>
+          </fieldset>
+        </div>
+        <div class="modal__column">
+          <div class="modal__info modal__info--2">
+            Мы сделаем все необходимые замеры, покажем образцы отделок и предложим оптимальное решение
+          </div>
+          <fieldset class="modal__field">
+            <label for="address" class="modal__label">Адрес:</label>
+            <input type="text" id="address" class="modal__input">
+          </fieldset>
+          <fieldset class="modal__field">
+            <label for="message2" class="modal__label">Комментарии:</label>
+            <textarea id="message2" class="modal__message"></textarea>
+          </fieldset>
+        </div>
+      </div>
+      <input type="checkbox" id="check3" class="checkbox">
+      <label for="check3" class="checkbox__label">Принимаю <a href="#">условия обработки</a> моих персональных данных</label>
+      <p>* - поля, обязательные для заполнения</p>
+      <button type="submit" class="modal__btn">Отправить</button>
+      <p class="modal__comment">Услуга действует в городах Санкт-Петербург, Ростов-на-Дону, Москва и МО бесплатно!<br>
+      Оставьте заявку, и мы приедем в удобное для вас время.<br> 
+      Вся дополнительная информация – телефону 8 (800) 200 46 66</p>
+    </form>
+  </div>
   
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js"></script>
 
   <!-- Slider -->
   <script>

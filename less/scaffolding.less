@@ -54,6 +54,7 @@ button {
 
 .top {
   position: fixed;
+  z-index: 10;
   bottom: 300px;
   right: 30px;
   height: 65px;
@@ -66,9 +67,10 @@ button {
   background-size: 40px 40px;
   
   p {
+    opacity: 0;
     margin: 0;
     position: absolute;
-    right: 100%;
+    right: 0;
     top: 0;
     bottom: 0;
     width: 220px;
@@ -78,10 +80,19 @@ button {
     text-align: right;
     background-color: rgba(0,0,0,.2);
     border: 1px solid #fff;
+    .transition();
     
     span {
       display: block;
       text-transform: uppercase;
+    }
+  }
+  
+  &:hover {
+    p {
+      opacity: 1;
+      right: 100%;
+      .transition();
     }
   }
 }
