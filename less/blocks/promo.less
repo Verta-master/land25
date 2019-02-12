@@ -1,9 +1,8 @@
 .promo__slider {
   height: 100vh;
   
-  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin-left: 10px;
-    margin-right: 10px;
+  .swiper-pagination-bullet {
+    margin: 0 10px !important;
   }
 }
 
@@ -21,7 +20,7 @@
 }
 
 .promo__pagination {
-  bottom: 30px !important;
+  bottom: 40px !important;
   
   .swiper-pagination-bullet {
     width: 170px;
@@ -39,7 +38,8 @@
 .promo__next {
   width: 61px;
   height: 61px;
-//  margin-top: 0;
+  top: 44%;
+  margin-top: 0;
   background-image: url(../img/icons/right-arrow.svg);
   background-size: 61px 61px;
   outline: none;
@@ -47,4 +47,9 @@
 
 .promo__prev {
   transform: rotate(180deg);
+  left: ~"calc(50% - 810px)";
+}
+
+.promo__next {
+  right: ~"calc(50% - 810px)";
 }
