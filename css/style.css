@@ -585,6 +585,90 @@ button {
 .menu__wrap {
   display: none;
 }
+.menu__wrap--opened {
+  display: block;
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  right: 0;
+  width: 385px;
+  padding: 55px 110px;
+  padding-right: 80px;
+  background-color: #fff;
+}
+.menu__close {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 200;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/icons/icon-menu-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px 15px;
+}
+.menu__sublist,
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu__sublist {
+  display: none;
+}
+.menu__link {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+.menu__link--more::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #a0a0a0;
+}
+.menu__sublink {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.menu__sublink::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 11px;
+  height: 2px;
+  background-color: #a0a0a0;
+}
+.menu__contacts {
+  margin-top: 35px;
+  padding-top: 10px;
+  font-size: 16px;
+  border-top: 1px solid #dadada;
+}
+.menu__contacts a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.menu__contacts .menu__feedback {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
 .promo__slider {
   height: 100vh;
 }
@@ -896,6 +980,30 @@ button {
           align-items: center;
   margin-top: 20px;
 }
+.social--menu {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 10px;
+}
+.social--menu .social__item {
+  margin-left: 0;
+  margin-right: 20px;
+}
+.social--menu .social__link {
+  width: 20px;
+  height: 20px;
+  background-size: 10px 10px;
+  opacity: 0.7;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.social--menu .social__link:hover,
+.social--menu .social__link:active {
+  opacity: 1;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
 .social__item {
   margin-left: 10px;
 }
@@ -1175,4 +1283,9 @@ button {
   font-size: 14px;
   opacity: 0.8;
   text-align: left;
+}
+@media (max-width: 1440px) {
+  .header__wrap {
+    width: 100%;
+  }
 }
