@@ -938,18 +938,15 @@ button {
 }
 .wide {
   margin-bottom: 62px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 .wide--bg1 {
-  background-image: url(../img/backgrounds/bg-3.jpg);
+  min-height: 442px;
 }
 .wide--bg2 {
-  background-image: url(../img/backgrounds/bg-2.jpg);
+  min-height: 418px;
 }
 .wide--bg3 {
-  background-image: url(../img/backgrounds/bg-1.jpg);
+  min-height: 442px;
 }
 .wide__wrap {
   display: -webkit-box;
