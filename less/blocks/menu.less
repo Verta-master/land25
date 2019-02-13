@@ -63,9 +63,9 @@
 
 .menu__wrap {
   position: absolute;
-  z-index: 150;
+  z-index: -1;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 385px;
   padding: 55px 110px;
   padding-right: 80px;
@@ -75,7 +75,7 @@
   
   &--opened {
     opacity: 1;
-    right: 0;
+    z-index: 150;
     transition: ease 0.3s;
   }
 }
