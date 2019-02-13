@@ -667,9 +667,9 @@ button {
 }
 .menu__wrap {
   position: absolute;
-  z-index: 150;
+  z-index: -1;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 385px;
   padding: 55px 110px;
   padding-right: 80px;
@@ -680,7 +680,7 @@ button {
 }
 .menu__wrap--opened {
   opacity: 1;
-  right: 0;
+  z-index: 150;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
 }
@@ -1306,6 +1306,8 @@ button {
           box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
   text-align: center;
   font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .modal--order {
   width: 993px;
@@ -1683,6 +1685,12 @@ button {
   }
   .menu__btn {
     width: 40px;
+  }
+  .menu__btn::before {
+    right: 10px;
+  }
+  .menu__btn::after {
+    left: 5px;
   }
   .header .logo {
     max-width: 100px;
