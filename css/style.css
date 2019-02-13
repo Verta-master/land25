@@ -623,48 +623,6 @@ button {
   background-size: 26px auto;
   background-position: top center;
 }
-.menu__btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: 14px;
-  top: -5px;
-  width: 0;
-  height: 0;
-  background-color: #6b6b6b;
-  opacity: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.menu__btn::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -7px;
-  left: 9px;
-  width: 0;
-  height: 0;
-  border: 1px solid #fff;
-  opacity: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.menu__btn:hover::before,
-.menu__btn:active::before {
-  width: 20px;
-  height: 46px;
-  opacity: 0.6;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.menu__btn:hover::after,
-.menu__btn:active::after {
-  width: 30px;
-  height: 50px;
-  opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
 .menu__wrap {
   position: absolute;
   z-index: -1;
@@ -674,12 +632,12 @@ button {
   padding: 55px 110px;
   padding-right: 80px;
   background-color: #fff;
-  opacity: 0;
+  display: none;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
 }
 .menu__wrap--opened {
-  opacity: 1;
+  display: block;
   z-index: 150;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
@@ -1685,12 +1643,6 @@ button {
   }
   .menu__btn {
     width: 40px;
-  }
-  .menu__btn::before {
-    right: 10px;
-  }
-  .menu__btn::after {
-    left: 5px;
   }
   .header .logo {
     max-width: 100px;
