@@ -94,6 +94,7 @@
 
 .style__btn {
   position: absolute;
+  z-index: 2;
   bottom: 15px;
   right: 15px;
   width: 170px;
@@ -106,4 +107,46 @@
   line-height: 1;
   text-transform: uppercase;
   background-color: #6b6b6b;
+  transition: .3s ease-in-out;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #fff;
+    transition: .3s ease-in-out;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -5px;
+    top: -5px;
+    width: 0;
+    height: ~"calc(100% + 10px)";
+    opacity: 0;
+    border: 1px solid #3c3c3b;
+    transition: .3s ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    color: #3c3c3b;
+    transition: .3s ease-in-out;
+    
+    &::before {
+      width: 100%;
+      transition: .3s ease-in-out;
+    }
+    &::after {
+      opacity: 1;
+      width: ~"calc(100% + 10px)";
+      transition: .3s ease-in-out;
+    }
+  }
 }

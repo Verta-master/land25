@@ -42,8 +42,29 @@
   justify-content: flex-end;
   
   li {
+    position: relative;
     margin-left: 15px;
     line-height: 21px;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -10px;
+      top: -3px;
+      height: ~"calc(100% + 6px)";
+      width: 0;
+      background: #6b6b6b;;
+      transition: width .3s ease-in-out;
+    }
+    
+    &:hover,
+    &:active {
+      &::before {
+        width: ~"calc(100% + 20px)";
+        transition: width .3s ease-in-out;
+      }
+    }
   }
 }
 
@@ -59,5 +80,26 @@
   .header__call {
     margin-top: 8px;
     font-size: 14px;
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -10px;
+      top: -3px;
+      height: ~"calc(100% + 6px)";
+      width: 0;
+      background: #6b6b6b;
+      transition: width .3s ease-in-out;
+    }
+    
+    &:hover,
+    &:active {
+      &::before {
+        width: ~"calc(100% + 20px)";
+        transition: width .3s ease-in-out;
+      }
+    }
   }
 }

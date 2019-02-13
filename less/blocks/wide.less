@@ -41,6 +41,8 @@
 }
 
 .wide__btn {
+  position: relative;
+  z-index: 2;
   width: 190px;
   height: 45px;
   margin-top: 20px;
@@ -52,4 +54,46 @@
   line-height: 1;
   color: #3c3c3b;
   background-color: #fff;
+  transition: .3s ease-in-out;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #6b6b6b;
+    transition: .3s ease-in-out;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -5px;
+    top: -5px;
+    width: 0;
+    height: ~"calc(100% + 10px)";
+    opacity: 0;
+    border: 1px solid #fff;
+    transition: .3s ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    color: #fff;
+    transition: .3s ease-in-out;
+    
+    &::before {
+      width: 100%;
+      transition: .3s ease-in-out;
+    }
+    &::after {
+      opacity: 1;
+      width: ~"calc(100% + 10px)";
+      transition: .3s ease-in-out;
+    }
+  }
 }

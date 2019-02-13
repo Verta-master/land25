@@ -20,18 +20,21 @@
 }
 
 .menu__wrap {
-  display: none;
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  right: -100%;
+  width: 385px;
+  padding: 55px 110px;
+  padding-right: 80px;
+  background-color: #fff;
+  opacity: 0;
+  transition: ease 0.3s;
   
   &--opened {
-    display: block;
-    position: absolute;
-    z-index: 150;
-    top: 0;
+    opacity: 1;
     right: 0;
-    width: 385px;
-    padding: 55px 110px;
-    padding-right: 80px;
-    background-color: #fff;
+    transition: ease 0.3s;
   }
 }
 
