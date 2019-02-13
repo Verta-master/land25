@@ -3,6 +3,8 @@
 }
 
 .menu__btn {
+  position: relative;
+  z-index: 5;
   display: block;
   width: 48px;
   height: 38px;
@@ -17,6 +19,46 @@
   background-repeat: no-repeat;
   background-size: 26px auto;
   background-position: top center;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 14px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    background-color: #6b6b6b;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -7px;
+    left: 9px;
+    width: 0;
+    height: 0;
+    border: 1px solid #fff;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  &:hover,
+  &:active {
+    &::before {
+      width: 20px;
+      height: 46px;
+      opacity: 0.6;
+      transition: .3s ease-in-out;
+    }
+    &::after {
+      width: 30px;
+      height: 50px;
+      opacity: 1;
+      transition: .3s ease-in-out;
+    }
+  }
 }
 
 .menu__wrap {

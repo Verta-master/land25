@@ -294,6 +294,13 @@
   <footer class="footer">
     <div class="wrapper">
       <div class="footer__top">
+        <div class="footer__links">
+          <a href="#">Двери</a>
+          <a href="#">Системы</a>
+          <a href="#">Компания</a>
+          <a href="#" class="footer__btn">Заказать замер</a>
+          <a href="#" class="footer__btn">Где купить</a>
+        </div>
         <div class="footer__block footer__block--wide">
           <p class="footer__title">ДВЕРИ</p>
           <ul class="footer__list">
@@ -383,17 +390,20 @@
             </li>
           </ul>
           <p class="footer__title">СВЯЗАТЬСЯ С НАМИ</p>
-          <a data-fancybox data-src="#feedback" href="javascript:;">Обратная связь</a>
-          <a data-fancybox data-src="#call" href="javascript:;">Заказать обратный звонок</a>
-          <a href="tel:+78005059913">8 (800) 505-99-13</a>
-          <a href="mailto:8800@volhovez.natm.ru">8800@volhovez.natm.ru</a>
+          <div class="footer__contacts-links">
+            <a data-fancybox data-src="#feedback" href="javascript:;">Обратная связь</a>
+            <a data-fancybox data-src="#call" href="javascript:;">Заказать обратный звонок</a>
+            <a href="tel:+78005059913">8 (800) 505-99-13</a>
+            <a href="mailto:8800@volhovez.natm.ru">8800@volhovez.natm.ru</a>
+          </div>
         </div>
       </div>
       <div class="footer__bottom">
         <div class="logo">
           <img src="img/images/logo_big.png" alt="Logo">
         </div>
-        <p>© 1993—2018   ООО ПК «Волховец»   «Волховец» — межкомнатные двери</p>
+        <p class="footer__copyright">© 1993—2018   ООО ПК «Волховец»   «Волховец» — межкомнатные двери</p>
+        <a href="tel:+78005059913" class="footer__phone">8 (800) 505-99-13</a>
         <p class="footer__comment">Не является публичной офертой<a href="#">Карта сайта</a></p>
       </div>
     </div>
@@ -404,7 +414,7 @@
   <!-- Modal windows -->
   <div style="display: none;" id="call" class="modal">
     <p class="modal__title">ЗАКАЗАТЬ ЗВОНОК</p>
-    <p>* - поля, обязательные для заполнения</p>
+<!--    <p>* - поля, обязательные для заполнения</p>-->
     <form action="#" class="modal__form">
       <div class="modal__wrap">
         <div class="modal__column">
@@ -426,6 +436,7 @@
     </form>
   </div>
   
+<!--
   <div style="display: none;" id="feedback" class="modal">
     <p class="modal__title">ПОДДЕРЖКА КЛИЕНТОВ</p>
     <form action="#" class="modal__form">
@@ -512,6 +523,7 @@
       Вся дополнительная информация – телефону 8 (800) 200 46 66</p>
     </form>
   </div>
+-->
   
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/script.js"></script>
