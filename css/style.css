@@ -405,6 +405,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 .footer {
   margin-top: auto;
@@ -548,8 +549,27 @@ button {
           justify-content: flex-end;
 }
 .header__list li {
+  position: relative;
   margin-left: 15px;
   line-height: 21px;
+}
+.header__list li::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -10px;
+  top: -3px;
+  height: calc(100% + 6px);
+  width: 0;
+  background: #6b6b6b;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.header__list li:hover::before,
+.header__list li:active::before {
+  width: calc(100% + 20px);
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .header__phone {
   margin-left: 10px;
@@ -562,6 +582,25 @@ button {
 .header__phone .header__call {
   margin-top: 8px;
   font-size: 14px;
+  position: relative;
+}
+.header__phone .header__call::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -10px;
+  top: -3px;
+  height: calc(100% + 6px);
+  width: 0;
+  background: #6b6b6b;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.header__phone .header__call:hover::before,
+.header__phone .header__call:active::before {
+  width: calc(100% + 20px);
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .menu {
   margin-left: 17px;
@@ -583,18 +622,23 @@ button {
   background-position: top center;
 }
 .menu__wrap {
-  display: none;
-}
-.menu__wrap--opened {
-  display: block;
   position: absolute;
   z-index: 150;
   top: 0;
-  right: 0;
+  right: -100%;
   width: 385px;
   padding: 55px 110px;
   padding-right: 80px;
   background-color: #fff;
+  opacity: 0;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+.menu__wrap--opened {
+  opacity: 1;
+  right: 0;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
 }
 .menu__close {
   position: absolute;
@@ -826,6 +870,7 @@ button {
 }
 .style__btn {
   position: absolute;
+  z-index: 2;
   bottom: 15px;
   right: 15px;
   width: 170px;
@@ -844,6 +889,52 @@ button {
   line-height: 1;
   text-transform: uppercase;
   background-color: #6b6b6b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.style__btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.style__btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -5px;
+  top: -5px;
+  width: 0;
+  height: calc(100% + 10px);
+  opacity: 0;
+  border: 1px solid #3c3c3b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.style__btn:hover,
+.style__btn:active {
+  color: #3c3c3b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.style__btn:hover::before,
+.style__btn:active::before {
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.style__btn:hover::after,
+.style__btn:active::after {
+  opacity: 1;
+  width: calc(100% + 10px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .wide {
   margin-bottom: 62px;
@@ -892,6 +983,8 @@ button {
   text-transform: uppercase;
 }
 .wide__btn {
+  position: relative;
+  z-index: 2;
   width: 190px;
   height: 45px;
   margin-top: 20px;
@@ -909,6 +1002,52 @@ button {
   line-height: 1;
   color: #3c3c3b;
   background-color: #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.wide__btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #6b6b6b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.wide__btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -5px;
+  top: -5px;
+  width: 0;
+  height: calc(100% + 10px);
+  opacity: 0;
+  border: 1px solid #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.wide__btn:hover,
+.wide__btn:active {
+  color: #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.wide__btn:hover::before,
+.wide__btn:active::before {
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.wide__btn:hover::after,
+.wide__btn:active::after {
+  opacity: 1;
+  width: calc(100% + 10px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .action {
   padding-top: 38px;
